@@ -105,7 +105,7 @@ describe('store/modules/channels/mutations.jsのテスト', () => {
     const state = createMockStateWithChannel();
     const payload = {
       channelId: state.channels[0].id,
-      message: 'message',
+      message: 'message'
     };
 
     mutations.addMessage(state, payload);
