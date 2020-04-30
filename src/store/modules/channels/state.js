@@ -1,3 +1,4 @@
+
 export const state = {
   channels: [],
   loading: {
@@ -5,4 +6,4 @@ export const state = {
     channels: false,
     postMessage: false
   }
-}
+};
