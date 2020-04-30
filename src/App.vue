@@ -1,32 +1,40 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <Header />
+    <div class="app-container">
+      <SideMenu />
+      <main class="main-container">
+        <router-view></router-view>
+      </main>
     </div>
-    <router-view/>
   </div>
 </template>
 
+<script>
+import 'normalize.css';
+
+import Header from './components/Header';
+import SideMenu from './components/SideMenu';
+
+export default {
+  components: {
+    Header,
+    SideMenu
+  }
+}
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.app-container {
+  display: flex;
+  padding-top: 60px;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.main-container {
+  width: calc(100% - 200px);
+  flex: 1;
+  position: absolute;
+  left: 200px;
 }
 </style>
